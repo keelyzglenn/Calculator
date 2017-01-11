@@ -4,11 +4,11 @@
    return number1 + number2;
  };
 
- var subtract = function(number1, number2) {
-   return number1 - number2;
+ var sub = function(number3, number4) {
+   return number3 - number4;
  };
 
- var multiply = function(number1, number2) {
+ var mult = function(number1, number2) {
    return number1 * number2;
  };
 
@@ -18,37 +18,47 @@
 
 //Everything below this line is user interface (front end) logic:
 $(document).ready(function() {
-	$("#add form").submit(function(event) {
+	$("form#add").submit(function(event) {
 		event.preventDefault();
 		var number1 = parseInt($("#add1").val());
 		var number2 = parseInt($("#add2").val());
-		alert(add(number1, number2));
+		var addResult = add(number1, number2);
+		$("#addAnswer").text(addResult);
+	});
+
+	$("form#sub").submit(function(event){
+		event.preventDefault();
+		var number3 = parseInt($("#sub1").val());
+		var number4 = parseInt($("#sub2").val());
+		var subResult =	sub(number3, number4);
+		$("#subAnswer").text(subResult);
+
 	});
 });
 
 
-// // For Subtraction
-// var sub = function(number1, number2) {
-// 	return number1 - number2;
-// };
+
+
+
+
+
+
+
+
+
+
+
+// For Multiplication
 //
-// var number1 = parseInt(prompt("Enter a number"));
-// var number2 = parseInt(prompt("Enter another number"));
-// var subResult = sub(number1, number2);
-//
-// alert(subResult);
-//
-// // For Multiplication
-// var mult = function(number1, number2) {
-// 	return number1 * number2;
-// };
-//
-// var number1 = parseInt(prompt("Enter a number"));
-// var number2 = parseInt(prompt("Enter another number"));
-// var multResult = mult(number1, number2);
-//
-// alert(multResult);
-//
+// 	$("form#mult").submit(function(event) {
+// 		event.preventDefault();
+// 		var number1 = parseInt($("#mult1").val());
+// 		var number2 = parseInt($("#mult2").val());
+// 		var multResult = mult(number1, number2);
+// 		$("#multAnswer").text(multResult);
+// 	});
+// });
+
 // // For Division
 // var div = function(number1, number2) {
 // 	return number1 / number2;

@@ -43,15 +43,13 @@ $(document).ready(function() {
 		var multResult = mult(number5, number6);
 		$("#multAnswer").text(multResult);
 	});
-});
 
 // For Division
-var div = function(number1, number2) {
-	return number1 / number2;
-};
-
-var number1 = parseInt(prompt("Enter a number"));
-var number2 = parseInt(prompt("Enter another number"));
-var divResult = div(number1, number2);
-
-alert(divResult);
+	$("form#div").submit(function(event){
+		event.preventDefault();
+		var number7 = parseInt($("#div1").val());
+		var number8 = parseInt($("#div2").val());
+		var divResult = div(number7, number8);
+		$("#divAnswer").text(divResult);
+	});
+});

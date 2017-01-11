@@ -1,4 +1,3 @@
-console.log("it works");
  //For Addition
  //business (or back-end) logic:
  var add = function(number1, number2) {
@@ -19,8 +18,6 @@ console.log("it works");
 
 //Everything below this line is user interface (front end) logic:
 $(document).ready(function() {
-	// alert("this is an alert");
-	// debugger;
 	$("#add form").submit(function(event) {
 		event.preventDefault();
 		var number1 = parseInt($("#add1").val());

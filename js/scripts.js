@@ -8,16 +8,17 @@
    return number3 - number4;
  };
 
- var mult = function(number1, number2) {
-   return number1 * number2;
+ var mult = function(number5, number6) {
+   return number5 * number6;
  };
 
- var divide = function(number1, number2) {
-   return number1 / number2;
+ var div = function(number7, number8) {
+   return number7 / number8;
  };
 
 //Everything below this line is user interface (front end) logic:
 $(document).ready(function() {
+// For Additon
 	$("form#add").submit(function(event) {
 		event.preventDefault();
 		var number1 = parseInt($("#add1").val());
@@ -25,47 +26,32 @@ $(document).ready(function() {
 		var addResult = add(number1, number2);
 		$("#addAnswer").text(addResult);
 	});
-
+// For Subtraction
 	$("form#sub").submit(function(event){
 		event.preventDefault();
 		var number3 = parseInt($("#sub1").val());
 		var number4 = parseInt($("#sub2").val());
 		var subResult =	sub(number3, number4);
 		$("#subAnswer").text(subResult);
+	});
 
+// For Multiplication
+	$("form#mult").submit(function(event) {
+		event.preventDefault();
+		var number5 = parseInt($("#mult1").val());
+		var number6 = parseInt($("#mult2").val());
+		var multResult = mult(number5, number6);
+		$("#multAnswer").text(multResult);
 	});
 });
 
+// For Division
+var div = function(number1, number2) {
+	return number1 / number2;
+};
 
+var number1 = parseInt(prompt("Enter a number"));
+var number2 = parseInt(prompt("Enter another number"));
+var divResult = div(number1, number2);
 
-
-
-
-
-
-
-
-
-
-
-// For Multiplication
-//
-// 	$("form#mult").submit(function(event) {
-// 		event.preventDefault();
-// 		var number1 = parseInt($("#mult1").val());
-// 		var number2 = parseInt($("#mult2").val());
-// 		var multResult = mult(number1, number2);
-// 		$("#multAnswer").text(multResult);
-// 	});
-// });
-
-// // For Division
-// var div = function(number1, number2) {
-// 	return number1 / number2;
-// };
-//
-// var number1 = parseInt(prompt("Enter a number"));
-// var number2 = parseInt(prompt("Enter another number"));
-// var divResult = div(number1, number2);
-//
-// alert(divResult);
+alert(divResult);

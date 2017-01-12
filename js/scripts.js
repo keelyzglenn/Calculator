@@ -18,38 +18,21 @@
 
 //Everything below this line is user interface (front end) logic:
 $(document).ready(function() {
-// For Additon
-	$("form#add").submit(function(event) {
+	$("form#calculator").submit(function(event) {
 		event.preventDefault();
-		var number1 = parseInt($("#add1").val());
-		var number2 = parseInt($("#add2").val());
-		var addResult = add(number1, number2);
-		$("#addAnswer").text(addResult);
-	});
-// For Subtraction
-	$("form#sub").submit(function(event){
-		event.preventDefault();
-		var number3 = parseInt($("#sub1").val());
-		var number4 = parseInt($("#sub2").val());
-		var subResult =	sub(number3, number4);
-		$("#subAnswer").text(subResult);
-	});
-
-// For Multiplication
-	$("form#mult").submit(function(event) {
-		event.preventDefault();
-		var number5 = parseInt($("#mult1").val());
-		var number6 = parseInt($("#mult2").val());
-		var multResult = mult(number5, number6);
-		$("#multAnswer").text(multResult);
-	});
-
-// For Division
-	$("form#div").submit(function(event){
-		event.preventDefault();
-		var number7 = parseInt($("#div1").val());
-		var number8 = parseInt($("#div2").val());
-		var divResult = div(number7, number8);
-		$("#divAnswer").text(divResult);
+		var number1 = parseInt($("#input1").val());
+		var number2 = parseInt($("#input2").val());
+    var operator = $("input:radio[name=operator]:checked").val();
+		var result ;
+    if (operator === "add") {
+      result= add(number1, number2);
+    } else if (operator === "subtract") {
+      result= sub(number1, number2);
+    } else if (operator === "multiply") {
+      result= mult(number1, number2);
+    } else if (operator === "divide") {
+      result= div(number1, number2);
+    }
+    $("#output").text(result);
 	});
 });
